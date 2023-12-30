@@ -34,12 +34,14 @@ select {
   --background: #f5f3ff;
   --accent: #646cff;
   --accent-hover: #535bf2;
+  --shadow: 36, 36, 36;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     --foreground: #f5f3ff;
     --background: #242424;
+    --shadow: 245, 243, 255;
   }
 }
 
@@ -123,7 +125,7 @@ input[type="range"]:focus {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   background-color: var(--accent);
-  color: var(--background);
+  color: #f5f3ff;
   font-weight: 500;
   text-decoration: none;
   transition: background-color 0.2s ease-in-out;
@@ -219,10 +221,10 @@ input[type="range"]:focus {
 
 .value {
   margin-top: 1rem !important;
-  background-color: #f5f3ff;
-  box-shadow: 0px 0px 50px 5px #24242420;
+  background-color: var(--background);
+  box-shadow: 0px 0px 50px 0px rgba(var(--shadow), 0.1);
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
   text-align: left;
   width: 100%;
   margin: 0 auto;
