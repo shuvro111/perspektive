@@ -134,6 +134,8 @@ input[type="range"]:focus {
 
 .button:hover {
   background-color: var(--accent-hover);
+  color: #f5f3ff;
+  text-decoration: none;
 }
 
 .button-github {
