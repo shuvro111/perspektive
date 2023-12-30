@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Perspektive is a CSS perspective generator. It helps you to generate CSS perspective values for your CSS transform property."
+    />
+    <meta
+      name="keywords"
+      content="css perspective generator, css perspective, css perspective generator online, css perspective generator tool, css perspective generator free, css perspective generator tool online, css perspective generator online free, css perspective generator tool free, css perspective generator tool free online, css perspective generator tool online free, css perspective generator tool free download, css perspective generator tool download, css perspective generator tool free download for pc, css perspective generator tool free download for windows 10, css perspective generator tool free download for windows 7, css perspective generator tool free download for windows 8, css perspective generator tool free download for windows xp, css perspective generator tool free download for windows 8.1, css perspective generator tool free download for windows 10 64 bit, css perspective generator tool free download for windows 10 32 bit, css perspective generator tool free download for windows 7 32 bit"
+    />
+    <meta name="author" content="Shuvro Sarkar" />
+
+    <title>Perspektive - CSS Perspective Generator</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vue JS CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <main class="container main">
+        <header class="header">
+          <div class="logo">
+            <img src="logo.png" alt="logo" />
+            <h1>Perspektive</h1>
+          </div>
+          <p class="tagline">
+            A CSS perspective generator. It helps you to generate CSS
+            perspective values for your CSS transform property.
+          </p>
+          <a
+            class="button button-github"
+            href="https://github.com/shuvro111/perspektive"
+          >
+            View on GitHub
+          </a>
+        </header>
+
+        <div class="perspective-container">
+          <div class="controls-container">
+            <h2>Controls</h2>
+            <div class="controls">
+              <div class="input-group">
+                <label for="perspective">Perspective</label>
+                <input
+                  type="range"
+                  name="perspective"
+                  id="perspective"
+                  v-model="perspective"
+                  min="0"
+                  max="1000"
+                />
+                <div class="value-container">{{perspective}}</div>
+              </div>
+              <div class="input-group">
+                <label for="rotate-x">Rotate X</label>
+                <input
+                  type="range"
+                  name="rotate-x"
+                  id="rotate-x"
+                  v-model="rotateX"
+                  min="-180"
+                  max="180"
+                />
+                <div class="value-container">{{rotateX}}</div>
+              </div>
+              <div class="input-group">
+                <label for="rotate-y">Rotate Y</label>
+                <input
+                  type="range"
+                  name="rotate-y"
+                  id="rotate-y"
+                  v-model="rotateY"
+                  min="-180"
+                  max="180"
+                />
+                <div class="value-container">{{rotateY}}</div>
+              </div>
+              <div class="input-group">
+                <label for="rotate-z">Rotate Z</label>
+                <input
+                  type="range"
+                  name="rotate-z"
+                  id="rotate-z"
+                  v-model="rotateZ"
+                  min="-180"
+                  max="180"
+                />
+                <div class="value-container">{{rotateZ}}</div>
+              </div>
+            </div>
+            <div class="button-group">
+              <button
+                class="button button-reset"
+                id="button-reset"
+                @click="reset"
+              >
+                Reset
+              </button>
+              <button
+                class="button button-copy"
+                id="button-copy"
+                @click="copyToClipboard"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="output-container">
+            <div class="box" id="box" :style="box"></div>
+          </div>
+        </div>
+        <code class="value"> transform:{{box.transform}} </code>
+      </main>
+
+      <footer class="footer">
+        <p class="footer-text">
+          Made with <span>❤️</span> by
+          <a href="github.com/shuvro111">Shuvro Sarkar</a>
+        </p>
+      </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
